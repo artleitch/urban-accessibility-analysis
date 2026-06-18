@@ -1,0 +1,23 @@
+<section class="map-shell">
+  <h2>Leaflet Map</h2>
+  <city-selector
+    [selectedValue]="selectedCity"
+    (selectionChange)="onCitySelected($event)"
+  ></city-selector>
+  <category-selector
+    [selectedValues]="selectedCategories"
+    (selectionChange)="onCategoriesSelected($event)"
+  ></category-selector>
+  <threshold-selector
+    [selectedValue]="selectedThreshold"
+    (selectionChange)="onThresholdSelected($event)"
+  ></threshold-selector>
+  <div
+    class="map-container"
+    leaflet
+    [leafletOptions]="options"
+    [leafletLayers]="layers"
+    [leafletLayersControl]="layersControl"
+    (leafletMapReady)="onMapReady($event)"
+  ></div>
+</section>

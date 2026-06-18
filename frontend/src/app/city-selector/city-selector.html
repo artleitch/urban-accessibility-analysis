@@ -1,0 +1,14 @@
+<div class="city-selector">
+  <label for="city-select">City</label>
+  <select
+    id="city-select"
+    #citySelect
+    [value]="selectedValue || ''"
+    (change)="onSelectChange(citySelect.value)"
+  >
+    <option value="" disabled>Select a city</option>
+    <option *ngFor="let option of cities" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+</div>

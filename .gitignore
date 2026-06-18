@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+gis-env/
+.venv/
+venv/
+env/
+*.egg-info/
+dist-info/
+
+# Build outputs
+dist/
+build/
+*.pyc
+__pycache__/
+*.egg
+
+# Angular
+.angular/
+angular/
+
+# Caches
+.cache/
+cache/
+*.cache
+.pytest_cache/
+.mypy_cache/
+.hypothesis/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Environment variables
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Large generated files
+# GeoJSON and GeoPackage exports
+*.geojson
+*.geojson.gz
+*.gpkg
+
+# Frontend public directory geojson files
+frontend/public/*.geojson
+

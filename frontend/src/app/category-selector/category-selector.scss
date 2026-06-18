@@ -1,0 +1,19 @@
+.category-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.category-selector label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.category-selector select {
+  min-width: 240px;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background: #fff;
+}

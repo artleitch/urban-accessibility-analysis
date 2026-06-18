@@ -1,0 +1,17 @@
+<div class="threshold-selector">
+  <label for="threshold-select">Walk threshold</label>
+  <select
+    id="threshold-select"
+    #thresholdSelect
+    [value]="selectedValue"
+    (change)="onSelectChange(thresholdSelect.value)"
+  >
+    <option
+      *ngFor="let option of thresholds"
+      [value]="option.value"
+      [selected]="option.value === selectedValue"
+    >
+      {{ option.label }}
+    </option>
+  </select>
+</div>
