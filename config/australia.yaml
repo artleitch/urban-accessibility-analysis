@@ -1,0 +1,45 @@
+name: Australia
+
+boundary_file: data/raw/boundaries/australia/SA2_2021_AUST_GDA2020.shp
+census_file: data/raw/census/australia/2021Census_G01_AUST_SA2.csv
+join_key_boundary: SA2_CODE21   # column name in shapefile
+join_key_census: SA2_CODE       # column name in CSV
+population_col: Tot_P_P
+crs: EPSG:7844                  # GDA2020
+
+census_read_csv_options: {}
+
+census_filters: {}
+
+filters:
+  min_population: 100000
+  min_area_km2: 50
+  density_threshold: 1000
+
+clip_radius_km: 50
+
+cities:
+  - name: Sydney
+    region: New South Wales
+    lat: -33.8688
+    lon: 151.2093
+  - name: Melbourne
+    region: Victoria
+    lat: -37.8136
+    lon: 144.9631
+  - name: Brisbane
+    region: Queensland
+    lat: -27.4698
+    lon: 153.0251
+  - name: Perth
+    region: Western Australia
+    lat: -31.9505
+    lon: 115.8605
+  - name: Adelaide
+    region: South Australia
+    lat: -34.9285
+    lon: 138.6007
+  - name: Canberra
+    region: Australian Capital Territory
+    lat: -35.2809
+    lon: 149.1300

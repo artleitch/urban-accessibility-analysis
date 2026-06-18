@@ -1,0 +1,27 @@
+.threshold-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.threshold-selector label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.threshold-selector input[type='range'] {
+  min-width: 240px;
+  width: 100%;
+  max-width: 320px;
+  accent-color: #238b45;
+}
+
+.threshold-ticks {
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.65);
+}
+

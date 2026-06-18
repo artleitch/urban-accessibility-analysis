@@ -1,0 +1,48 @@
+name: Canada
+
+boundary_file: data/raw/boundaries/canada/lcsd000b21a_e.shp
+census_file: data/raw/census/canada/98-401-X2021003_English_CSV_data.csv
+join_key_boundary: DGUID       # column name in shapefile
+join_key_census: DGUID         # column name in CSV
+population_col: C1_COUNT_TOTAL
+crs: EPSG:3347                 # Canada Lambert Conformal Conic
+
+census_read_csv_options:
+  encoding: latin1
+
+census_filters:
+  GEO_LEVEL: Census subdivision
+  CHARACTERISTIC_NAME: Population, 2021
+
+filters:
+  min_population: 100000
+  min_area_km2: 50
+  density_threshold: 1000
+
+clip_radius_km: 50
+
+cities:
+  # - name: Toronto
+  #   region: Ontario
+  #   lat: 43.6532
+  #   lon: -79.3832
+  # - name: Victoria
+  #   region: British Columbia
+  #   lat: 48.4284
+  #   lon: -123.3656
+  # - name: Edmonton
+  #   region: Alberta
+  #   lat: 53.5461
+  #   lon: -113.4938
+  # - name: Winnipeg
+  #   region: Manitoba
+  #   lat: 49.8951
+  #   lon: -97.1384
+  # - name: Quebec City
+  #   region: Quebec
+  #   lat: 46.8139
+  #   lon: -71.2080
+  - name: Regina
+    region: Saskatchewan
+    lat: 50.4452
+    lon: -104.6189

@@ -1,0 +1,17 @@
+<div class="city-selector">
+  <label for="city-select">City</label>
+  <select
+    id="city-select"
+    [attr.value]="selectedValue || ''"
+    (change)="onSelectChange($any($event.target).value)"
+  >
+    <option value="" disabled>Select a city</option>
+    <ng-container *ngFor="let group of cityGroups">
+      <optgroup [attr.label]="group.country">
+        <option *ngFor="let option of group.options" [value]="option.value" [disabled]="option.disabled">
+        {{ option.label }}
+        </option>
+      </optgroup>
+    </ng-container>
+  </select>
+</div>

@@ -1,0 +1,17 @@
+<div class="threshold-selector">
+  <label for="threshold-slider">Walk threshold: {{ selectedLabel }}</label>
+  <input
+    id="threshold-slider"
+    #thresholdSlider
+    type="range"
+    [attr.min]="minThreshold"
+    [attr.max]="maxThreshold"
+    [attr.step]="thresholdStep"
+    [attr.value]="selectedValue"
+    (input)="onSliderInput(thresholdSlider.value)"
+  />
+
+  <div class="threshold-ticks" aria-hidden="true">
+    <span *ngFor="let option of thresholds">{{ option.value }}</span>
+  </div>
+</div>

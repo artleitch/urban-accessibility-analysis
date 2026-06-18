@@ -1,0 +1,14 @@
+<div class="category-selector">
+  <label>Categories</label>
+  <div class="category-options">
+    <label *ngFor="let option of categories" class="category-option">
+      <input
+        type="checkbox"
+        [value]="option.value"
+        [checked]="isSelected(option.value)"
+        (change)="onCheckboxChange(option.value, $event.target.checked)"
+      />
+      {{ option.label }}
+    </label>
+  </div>
+</div>
