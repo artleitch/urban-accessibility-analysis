@@ -62,6 +62,3 @@ desktop.ini
 # Frontend public directory geojson files
 frontend/public/*.geojson
 
-# Local project management
-TODO.md
-

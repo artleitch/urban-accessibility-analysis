@@ -1,0 +1,7 @@
+category,hex_count,valid_hexes,zero_min_hexes,zero_min_pct,source_node_hexes,zero_min_and_source_hexes,zero_min_and_source_pct_of_zero,median_walk_m,median_snap_m,max_source_poi_count_on_node
+education,35915,32547,862,2.4,862,862,100.0,1601.0,79.01,9
+grocery,35915,32422,7,0.02,7,7,100.0,4305.05,79.01,1
+healthcare,35915,32434,20,0.06,20,20,100.0,2739.95,79.01,2
+libraries,35915,32402,2,0.01,2,2,100.0,7896.53,79.01,1
+parks,35915,34419,4743,13.21,4743,4743,100.0,509.53,79.01,176
+transit,35915,32407,34,0.09,34,34,100.0,7524.69,79.01,3

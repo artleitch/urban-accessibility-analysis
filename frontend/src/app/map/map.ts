@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import {
   tileLayer,
@@ -13,7 +12,6 @@ import {
 import { CategorySelectorComponent } from '../category-selector/category-selector';
 import { CitySelectorComponent } from '../city-selector/city-selector';
 import { ThresholdSelectorComponent } from '../threshold-selector/threshold-selector';
-import { CATEGORY_OPTIONS } from '../category-selector/category-selector.constants';
 import {
   DEFAULT_MAP_OPTIONS,
   DEFAULT_SELECTED_CATEGORIES,
@@ -37,7 +35,7 @@ import {
 @Component({
   selector: 'app-map',
   standalone: true,
-  imports: [CommonModule, LeafletModule, CategorySelectorComponent, CitySelectorComponent, ThresholdSelectorComponent],
+  imports: [LeafletModule, CategorySelectorComponent, CitySelectorComponent, ThresholdSelectorComponent],
   templateUrl: './map.html',
   styleUrls: ['./map.scss']
 })
@@ -47,12 +45,6 @@ export class MapComponent {
   protected selectedCategories: string[] = DEFAULT_SELECTED_CATEGORIES;
   protected selectedThreshold = DEFAULT_SELECTED_THRESHOLD;
   protected selectedCity: string = DEFAULT_SELECTED_CITY;
-  protected readonly densityThresholdNote = 'This map shows urban extents identified by a preprocessing filter: only census areas with > 1000 people/km² density are included, then clustered and filtered to cities with population ≥ 100k and area ≥ 50 km².';
-
-  private readonly categoryLabelByValue: Record<string, string> = CATEGORY_OPTIONS.reduce(
-    (acc, option) => ({ ...acc, [option.value]: option.label }),
-    {} as Record<string, string>
-  );
 
   private baseLayer = tileLayer(MAP_TILE_URL, MAP_TILE_OPTIONS);
 
@@ -69,8 +61,6 @@ export class MapComponent {
   };
 
   private cityGeoJsonFiles: Record<string, string> = CITY_GEOJSON_FILES;
-  private readonly fitPadding: [number, number] = [20, 20];
-  private readonly initialZoomInFromFit = 0.5;
 
   protected geoJsonOptions: GeoJSONOptions = {
     style: (feature) => this.getFeatureStyle(feature),
@@ -82,12 +72,6 @@ export class MapComponent {
       }
     }
   };
-
-  protected get selectedCategoryLabels(): string[] {
-    return this.selectedCategories.map(
-      (value) => this.categoryLabelByValue[value] ?? value
-    );
-  }
 
   private getFeatureStyle(feature: any) {
     const props = feature?.properties as Record<string, any> | undefined;
@@ -167,11 +151,7 @@ export class MapComponent {
           this.geoJsonLayer.addTo(this.map);
           const bounds = this.geoJsonLayer.getBounds();
           if (bounds.isValid()) {
-            this.map.fitBounds(bounds, { padding: this.fitPadding });
-            const currentZoom = this.map.getZoom();
-            const maxZoom = this.map.getMaxZoom();
-            const targetZoom = Math.min(currentZoom + this.initialZoomInFromFit, maxZoom);
-            this.map.setZoom(targetZoom);
+            this.map.fitBounds(bounds, { padding: [20, 20] });
           }
         }
       })

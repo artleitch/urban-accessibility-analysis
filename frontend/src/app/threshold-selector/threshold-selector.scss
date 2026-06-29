@@ -10,18 +10,10 @@
   font-weight: 600;
 }
 
-.threshold-selector input[type='range'] {
+.threshold-selector select {
   min-width: 240px;
-  width: 100%;
-  max-width: 320px;
-  accent-color: #238b45;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background: #fff;
 }
-
-.threshold-ticks {
-  display: flex;
-  justify-content: space-between;
-  max-width: 320px;
-  font-size: 0.75rem;
-  color: rgba(0, 0, 0, 0.65);
-}
-

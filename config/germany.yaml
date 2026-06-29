@@ -1,0 +1,83 @@
+name: Germany
+
+boundary_file: data/raw/boundaries/germany/VG250_GEM.shp
+census_file: data/raw/census/germany/1000A-0001_en.csv
+join_key_boundary: ARS_0      # municipality identifier in VG250_GEM
+join_key_census: ARS_0        # matching identifier in census CSV
+population_col: Persons
+crs: EPSG:3035                # ETRS89 / LAEA Europe
+
+census_read_csv_options:
+  sep: ";"
+  encoding: latin1
+  dtype:
+    ARS_0: string
+
+census_filters: {}
+
+
+filters:
+  min_population: 100000
+  min_area_km2: 50
+  density_threshold: 1000
+
+clip_radius_km: 50
+
+cities:
+#  - name: Stuttgart
+#    region: Baden-Württemberg
+#    lat: 48.7758
+#    lon: 9.1829
+#  - name: Munich
+#    region: Bavaria
+#    lat: 48.1351
+#    lon: 11.5820
+#  - name: Berlin
+#    region: Berlin
+#    lat: 52.5200
+#    lon: 13.4050
+#  - name: Bremen
+#    region: Bremen
+#    lat: 53.0793
+#    lon: 8.8017
+#  - name: Hamburg
+#    region: Hamburg
+#    lat: 53.5511
+#    lon: 9.9937
+#  - name: Wiesbaden
+#    region: Hesse
+#    lat: 50.0782
+#    lon: 8.2398
+#  - name: Schwerin
+#    region: Mecklenburg-Vorpommern
+#    lat: 53.6355
+#    lon: 11.4012
+#  - name: Hanover
+#    region: Lower Saxony
+#    lat: 52.3759
+#    lon: 9.7320
+  - name: Duesseldorf
+    region: North Rhine-Westphalia
+    lat: 51.2277
+    lon: 6.7735
+  - name: Mainz
+    region: Rhineland-Palatinate
+    lat: 49.9929
+    lon: 8.2473
+  - name: Saarbruecken
+    region: Saarland
+    lat: 49.2402
+    lon: 6.9969
+  - name: Dresden
+    region: Saxony
+    lat: 51.0504
+    lon: 13.7373
+  - name: Magdeburg
+    region: Saxony-Anhalt
+    lat: 52.1205
+    lon: 11.6276
+  - name: Kiel
+    region: Schleswig-Holstein
+    lat: 54.3233
+    lon: 10.1228
+
