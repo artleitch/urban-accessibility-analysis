@@ -22,26 +22,26 @@ filters:
 clip_radius_km: 50
 
 cities:
-  # - name: Toronto
-  #   region: Ontario
-  #   lat: 43.6532
-  #   lon: -79.3832
-  # - name: Victoria
-  #   region: British Columbia
-  #   lat: 48.4284
-  #   lon: -123.3656
-  # - name: Edmonton
-  #   region: Alberta
-  #   lat: 53.5461
-  #   lon: -113.4938
-  # - name: Winnipeg
-  #   region: Manitoba
-  #   lat: 49.8951
-  #   lon: -97.1384
-  # - name: Quebec City
-  #   region: Quebec
-  #   lat: 46.8139
-  #   lon: -71.2080
+   - name: Toronto
+     region: Ontario
+     lat: 43.6532
+     lon: -79.3832
+   - name: Victoria
+     region: British Columbia
+     lat: 48.4284
+     lon: -123.3656
+   - name: Edmonton
+     region: Alberta
+     lat: 53.5461
+     lon: -113.4938
+   - name: Winnipeg
+     region: Manitoba
+     lat: 49.8951
+     lon: -97.1384
+   - name: Quebec City
+     region: Quebec
+     lat: 46.8139
+     lon: -71.2080
   - name: Regina
     region: Saskatchewan
     lat: 50.4452

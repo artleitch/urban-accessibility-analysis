@@ -59,6 +59,9 @@ desktop.ini
 *.geojson.gz
 *.gpkg
 
+# Raw data files (large source datasets)
+data/raw/
+
 # Frontend public directory geojson files
 frontend/public/*.geojson
 
